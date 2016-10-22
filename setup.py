@@ -48,6 +48,6 @@ setup(
     # scripts=['scripts/usfm2osis', 'scripts/usfmtags'],
     package_data={'usfm2osis': ['schemas/*.xsd']},
     entry_points={'console_scripts':
-                  ['usfm2osis = usfm2osis.scripts.usfm2osis:main',
-                   'usfmtags = usfm2osis.scripts.usfmtags:main']}
+                  ['usfm2osis = usfm2osis.usfm2osis:main',
+                   'usfmtags = usfm2osis.usfmtags:main']}
 )
