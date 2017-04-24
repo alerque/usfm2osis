@@ -1663,6 +1663,8 @@ if __name__ == "__main__":
                 osisParser = etree.XMLParser(schema = etree.XMLSchema(etree.XML(urllib.urlopen(osisSchema).read())))
                 etree.fromstring(osisDoc, osisParser)
                 print('XML Valid')
+            except AttributeError:
+                print('Cannot open schema because this version of urllib doesn\'t have urlopen()')
             except ImportError:
                 print('For schema validation, install lxml')
             except etree.XMLSyntaxError as eVal:
