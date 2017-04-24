@@ -574,13 +574,13 @@ def convertToOsis(sFile):
         osis = re.sub('item type="head"', 'head', osis)
 
         # \ior_text...\ior*
-        osis = re.sub(r'\\ior\b\s+(.+?)\\ior\*', r'<reference>\1</reference>', osis, flags=re.DOTALL)
+        #  osis = re.sub(r'\\ior\b\s+(.+?)\\ior\*', r'<reference>\1</reference>', osis, flags=re.DOTALL)
 
         # \iex  # TODO: look for example; I have no idea what this would look like in context
-        osis = re.sub(r'\\iex\b\s*(.+?)'+'?=(\s*(\\c|</div type="book">\uFDD0))', r'<div type="bridge" subType="x-introduction">\1</div>', osis, flags=re.DOTALL)
+        #  osis = re.sub(r'\\iex\b\s*(.+?)'+'?=(\s*(\\c|</div type="book">\uFDD0))', r'<div type="bridge" subType="x-introduction">\1</div>', osis, flags=re.DOTALL)
 
         # \iqt_text...\iqt*
-        osis = re.sub(r'\\iqt\s+(.+?)\\iqt\*', r'<q subType="x-introduction">\1</q>', osis, flags=re.DOTALL)
+        #  osis = re.sub(r'\\iqt\s+(.+?)\\iqt\*', r'<q subType="x-introduction">\1</q>', osis, flags=re.DOTALL)
 
         # \ie
         osis = re.sub(r'\\ie\b\s*', '<milestone type="x-usfm-ie"/>', osis)
@@ -1226,7 +1226,7 @@ def convertToOsis(sFile):
         # these can all be handled by the default \z Namespace handlers:
 
         # \z{X}...\z{X}*
-        osis = re.sub(r'\z([^\s]+)\s(.+?)(\z\1\*)', r'<seg type="x-\1">\2</seg>', osis, flags=re.DOTALL)
+        #  osis = re.sub(r'\z([^\s]+)\s(.+?)(\z\1\*)', r'<seg type="x-\1">\2</seg>', osis, flags=re.DOTALL)
 
         # \z{X}
         osis = re.sub(r'\\z([^\s]+)', r'<milestone type="x-usfm-z-\1"/>', osis)
